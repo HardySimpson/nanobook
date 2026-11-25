@@ -1,0 +1,55 @@
+name: 报告一个问题
+description: 打不开、卡住、排版错乱、某个功能不好用
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先看一眼「设置 → 关于」里的版本号，下面要填。
+        不需要附正文；如果涉及具体书，只写书名与作者就够了。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      placeholder: 如 0.66.2（设置 → 关于 → 版本）
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 设备与系统
+      placeholder: 如 Pixel 7 / Android 14，或 iPhone 13 / iOS 18，或 Mac / macOS 15
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: 用的是哪个
+      options:
+        - 安卓 App（APK）
+        - 网页版（nanobook.dev）
+        - 两个都有
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 怎么复现
+      placeholder: |
+        1. 打开…
+        2. 点…
+        3. 出现…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望的样子
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私
+      options:
+        - label: 我确认上面没有粘贴整章正文或他人的个人信息
+          required: true
